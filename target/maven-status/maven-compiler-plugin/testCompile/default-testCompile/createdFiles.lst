@@ -1,0 +1,4 @@
+com\techriseyou\taskmanager\service\JwtServiceTest.class
+com\techriseyou\taskmanager\LifelinkerCoreApplicationTests.class
+com\techriseyou\taskmanager\security\JwtAuthFilterTest.class
+com\techriseyou\taskmanager\service\UserInfoServiceTest.class
