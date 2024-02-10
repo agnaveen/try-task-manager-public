@@ -4,13 +4,13 @@
 Navigate to [https://start.spring.io](https://start.spring.io).
 
 ## Project Metadata
-Specify **Group** (`com.example`), **Artifact** (`todo-service`), **Name**, and **Description** of your project.
+Specify **Group** (`com.tecgriseyou`), **Artifact** (`try-task-manager`), **Name**, and **Description** of your project.
 
 ## Choose the Project
-Maven or Gradle (Maven is commonly used for its simplicity and widespread support).
+Maven
 
 ## Select Java Version
-Recommend Java 11 or newer for long-term support.
+Recommend Java 11 or newer for long-term support.(We used Java 17 for this project)
 
 ## Selecting Key Dependencies
 
@@ -24,15 +24,15 @@ Recommend Java 11 or newer for long-term support.
 ## Project Generation
 
 - **Generate and Download**: Click "Generate" to download the project template.
-- **Import Project**: Open your IDE (e.g., IntelliJ IDEA, Eclipse) and import the project as a Maven or Gradle project.
+- **Import Project**: Open your IDE (e.g., IntelliJ IDEA, Eclipse) and import the project as a Maven project. We prefer Intellij Idea community version
 
 ## Initial Configuration
 
 - `application.properties`: Configure application-level settings, like server port, database connection details (if necessary for this step).
-- **Main Application Class**: Review the generated main class (`TodoServiceApplication.java`), which is annotated with `@SpringBootApplication` to enable auto-configuration and component scanning.
+- **Main Application Class**: Review the generated main class (`TaskManagerApplication.java`), which is annotated with `@SpringBootApplication` to enable auto-configuration and component scanning.
 
 ## First Run
 
 - **Running the Application**: 
-  - Use the IDE or command line (`mvn spring-boot:run` for Maven, `gradlew bootRun` for Gradle) to start the application.
-- **Verification**: Ensure the application starts without errors. Default port 8080 should be accessible.
+  - Use the IDE or command line (`mvn spring-boot:run`) to start the application.
+- **Verification**: Ensure the application starts without errors. Default port 8080 should be accessible. (we used 8001 port for this project)
