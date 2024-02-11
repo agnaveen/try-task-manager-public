@@ -5,8 +5,13 @@ Follow this link - https://java.tutorials24x7.com/blog/how-to-install-openjdk-17
 ## Install MySQL 8
 Follow this link - https://www.sqlshack.com/how-to-install-mysql-database-server-8-0-19-on-windows-10/
 
+### Download Intellij Idea Community Version
+Download Link - https://www.jetbrains.com/idea/download/?section=windows
+![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/07639de3-3b83-41d0-97e6-4b3a2c975317)
+
+
 ## Connect your Local Mysql Server from MySQL Workbench
-### Create a new database - `trytaskmanager`
+> Create a new database - `trytaskmanager`
 ![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/80a913c7-9541-4951-bcf3-4baba90ba609)
 
 ### Run the below scripts to create a required tables
@@ -42,4 +47,12 @@ Follow this link - https://www.sqlshack.com/how-to-install-mysql-database-server
 > During mysql installer you can configure your username and password, the same should be configured in the `application.properties` file.
 
 ![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/864fe034-64c8-4a5a-940a-bd950eeb63b4)
+
+### Run `TaskManagerApplication.java` file from your IDE 
+> Please note that we are using Intellij Idea Community IDE - the download link is also attached at the top of the page for your reference
+
+![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/265daabd-03de-4a0a-adf8-5ab358c59fe5)
+
+
+
 
