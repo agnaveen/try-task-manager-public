@@ -37,3 +37,9 @@ Follow this link - https://www.sqlshack.com/how-to-install-mysql-database-server
 
 ### You should be able to see new tables like this,
 ![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/2d74a9a1-e2ff-41b6-bdb5-9bb7c7ed6c61)
+
+### Make sure you have right config in your application.properties for Mysql
+> During mysql installer you can configure your username and password, the same should be configured in the `application.properties` file.
+
+![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/864fe034-64c8-4a5a-940a-bd950eeb63b4)
+
