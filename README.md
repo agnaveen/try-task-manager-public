@@ -1,8 +1,8 @@
-# Installing the required software
-## Install Java 17
+## Installing the required software
+### Install Java 17
 Follow this link - https://java.tutorials24x7.com/blog/how-to-install-openjdk-17-on-windows
 
-## Install MySQL 8
+### Install MySQL 8
 Follow this link - https://www.sqlshack.com/how-to-install-mysql-database-server-8-0-19-on-windows-10/
 
 ### Download Intellij Idea Community Version
@@ -11,8 +11,14 @@ Download Link - https://www.jetbrains.com/idea/download/?section=windows
 
 ![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/07639de3-3b83-41d0-97e6-4b3a2c975317)
 
+### Install Maven
+Follow this link - https://phoenixnap.com/kb/install-maven-windows
+
+
 
 ## Connect your Local Mysql Server from MySQL Workbench
+
+
 > Create a new database - `trytaskmanager`
 ![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/80a913c7-9541-4951-bcf3-4baba90ba609)
 
@@ -210,11 +216,15 @@ Get All Tasks
 To get a todo task details by the specified id
 
 #### Endpoint
-`[GET] http://localhost:8001/taskmanager/api/v1/task/2`
+`[GET] http://localhost:8001/taskmanager/api/v1/task/{taskId}`
 
 #### Request Headers
 - `Content-Type: application/json`
 - `Authorization: Bearer <Your JWT Token>`
+
+#### Path Parameters
+- `taskId` (required): The unique identifier of the task to be retrieved.
+
 
 #### Response Body
 ```json
