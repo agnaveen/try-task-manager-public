@@ -7,6 +7,8 @@ Follow this link - https://www.sqlshack.com/how-to-install-mysql-database-server
 
 ### Download Intellij Idea Community Version
 Download Link - https://www.jetbrains.com/idea/download/?section=windows
+
+
 ![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/07639de3-3b83-41d0-97e6-4b3a2c975317)
 
 
@@ -126,6 +128,8 @@ To login with the credentials as per the signup.
 ![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/45dfa55b-b914-44a7-843f-44be54ff0919)
 
 #### Token Details For your better understanding
+Open https://jwt.io to check your token details
+
 ![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/c1fb1a30-4ad2-4592-86cb-133e49f0ce14)
 
 ### Create a Task API
