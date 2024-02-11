@@ -53,6 +53,50 @@ Download Link - https://www.jetbrains.com/idea/download/?section=windows
 
 ![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/265daabd-03de-4a0a-adf8-5ab358c59fe5)
 
+### Validating the API's
+Open https://postman.com and import this collection.
+[Task Manager.postman_collection.json](https://github.com/agnaveen/try-task-manager-public/files/14234144/Task.Manager.postman_collection.json)
+
+#### Signup User API
+![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/14f1cd81-2b18-4beb-8117-231392925951)
+
+### Login API
+![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/45dfa55b-b914-44a7-843f-44be54ff0919)
+
+#### Token Details For your better understanding
+![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/c1fb1a30-4ad2-4592-86cb-133e49f0ce14)
+
+### Create a Task API
+![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/557839cf-e1bb-4459-a198-e56082b20d63)
+
+#### Make sure to pass the Login Token 
+![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/907e8d71-a11b-4063-94d1-8c79e5b0bb31)
+
+### Get Tasks API
+![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/0b706c64-2fe2-4281-92c1-78ebb7aaa4cf)
+
+### Get Task By Id API
+![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/f8797bc6-e402-42ac-89f4-0b1bbe50eb1d)
+
+### Update Task API
+![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/a294b286-3959-445b-842f-24a0881f1703)
+
+### Delete Task API
+![image](https://github.com/agnaveen/try-task-manager-public/assets/6266029/c7d8c0e6-4b27-4942-96b3-521b2f76e7a9)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
