@@ -1,4 +1,16 @@
+# Installing the required software
+## Install Java 17
+Follow this link - https://java.tutorials24x7.com/blog/how-to-install-openjdk-17-on-windows
+
+## Install MySQL 8
+Follow this link - https://www.sqlshack.com/how-to-install-mysql-database-server-8-0-19-on-windows-10/
+
+
+
+
+
 # Introduction to Spring Initializr
+To create a new spring project follow the below steps, to import this project, just skip the below steps.
 
 ## Web Interface
 Navigate to [https://start.spring.io](https://start.spring.io).
