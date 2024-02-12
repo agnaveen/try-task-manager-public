@@ -9,19 +9,22 @@ import com.techriseyou.taskmanager.entity.Task;
 import com.techriseyou.taskmanager.service.TaskService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.http.MediaType;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
-import static org.mockito.MockitoAnnotations.openMocks;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+@ExtendWith(MockitoExtension.class)
 public class TaskControllerTest {
 
     @Mock
@@ -30,25 +33,65 @@ public class TaskControllerTest {
     @InjectMocks
     private TaskController taskController;
 
-    private MockMvc mockMvc;
+    private Task task1, task2;
 
     @BeforeEach
-    public void setup() {
-        openMocks(this);
-        this.mockMvc = MockMvcBuilders.standaloneSetup(taskController).build();
+    void setUp() {
+        task1 = new Task();
+        task1.setId(1L);
+        task1.setTitle("Task 1");
+        task1.setDescription("Description 1");
+
+        task2 = new Task();
+        task2.setId(2L);
+        task2.setTitle("Task 2");
+        task2.setDescription("Description 2");
     }
 
     @Test
-    public void getAllTasksTest() throws Exception {
-        when(taskService.getAllTasks()).thenReturn(Arrays.asList(new Task(), new Task()));
-
-        mockMvc.perform(get("/task")
-                        .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
-               // .andExpect(jsonPath("$").isArray());
-
-        verify(taskService, times(1)).getAllTasks();
+    void getAllTasks() {
+        when(taskService.getAllTasks()).thenReturn(Arrays.asList(task1, task2));
+        List<Task> tasks = taskController.getAllTasks();
+        assertEquals(2, tasks.size());
+        verify(taskService).getAllTasks();
     }
 
-}
+    @Test
+    void getTaskById_ExistingId() {
+        when(taskService.getTaskById(1L)).thenReturn(Optional.of(task1));
+        Task result = taskController.getTaskById(1L);
+        assertEquals(task1, result);
+        verify(taskService).getTaskById(1L);
+    }
 
+    @Test
+    void getTaskById_NonExistingId() {
+        when(taskService.getTaskById(any(Long.class))).thenReturn(Optional.empty());
+        Task result = taskController.getTaskById(999L);
+        assertNull(result);
+        verify(taskService).getTaskById(999L);
+    }
+
+    @Test
+    void createTask() {
+        when(taskService.createTask(any(Task.class))).thenReturn(task1);
+        Task result = taskController.createTask(task1);
+        assertEquals(task1, result);
+        verify(taskService).createTask(task1);
+    }
+
+    @Test
+    void updateTask_ExistingId() {
+        when(taskService.updateTask(eq(1L), any(Task.class))).thenReturn(task1);
+        Task result = taskController.updateTask(1L, task1);
+        assertEquals(task1, result);
+        verify(taskService).updateTask(eq(1L), any(Task.class));
+    }
+
+    @Test
+    void deleteTask() {
+        doNothing().when(taskService).deleteTask(1L);
+        taskController.deleteTask(1L);
+        verify(taskService).deleteTask(1L);
+    }
+}
