@@ -86,8 +86,8 @@ public class TaskControllerTest {
 
     @Test
     void createTask() {
-        when(taskService.createTask(any(Task.class))).thenReturn(task1);
-        Task result = taskController.createTask(task1);
+        when(taskService.createTask(any(Task.class))).thenReturn(taskDto1);
+        TaskDto result = taskController.createTask(task1);
         assertEquals(task1, result);
         verify(taskService).createTask(task1);
     }
