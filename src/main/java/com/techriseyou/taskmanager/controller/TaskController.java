@@ -4,6 +4,7 @@ package com.techriseyou.taskmanager.controller;
  * Description: TaskController.
  * Author: Naveen
  */
+import com.techriseyou.taskmanager.dto.TaskDto;
 import com.techriseyou.taskmanager.entity.Task;
 import com.techriseyou.taskmanager.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public class TaskController {
     }
 
     @GetMapping
-    public List<Task> getAllTasks() {
+    public List<TaskDto> getAllTasks() {
         return taskService.getAllTasks();
     }
 
@@ -34,7 +35,7 @@ public class TaskController {
     }
 
     @PostMapping
-    public Task createTask(@RequestBody Task task) {
+    public TaskDto createTask(@RequestBody Task task) {
         return taskService.createTask(task);
     }
 

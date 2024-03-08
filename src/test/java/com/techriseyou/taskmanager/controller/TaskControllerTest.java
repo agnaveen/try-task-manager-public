@@ -5,6 +5,7 @@ package com.techriseyou.taskmanager.controller;
  * Author: Naveen
  */
 
+import com.techriseyou.taskmanager.dto.TaskDto;
 import com.techriseyou.taskmanager.entity.Task;
 import com.techriseyou.taskmanager.service.TaskService;
 import org.junit.jupiter.api.BeforeEach;
@@ -34,6 +35,7 @@ public class TaskControllerTest {
     private TaskController taskController;
 
     private Task task1, task2;
+    private TaskDto taskDto1, taskDto2;
 
     @BeforeEach
     void setUp() {
@@ -46,12 +48,22 @@ public class TaskControllerTest {
         task2.setId(2L);
         task2.setTitle("Task 2");
         task2.setDescription("Description 2");
+
+        taskDto1 = new TaskDto();
+        taskDto1.setId(1L);
+        taskDto1.setTitle("Task 1");
+        taskDto1.setDescription("Description 1");
+
+        taskDto2 = new TaskDto();
+        taskDto2.setId(2L);
+        taskDto2.setTitle("Task 2");
+        taskDto2.setDescription("Description 2");
     }
 
     @Test
     void getAllTasks() {
-        when(taskService.getAllTasks()).thenReturn(Arrays.asList(task1, task2));
-        List<Task> tasks = taskController.getAllTasks();
+        when(taskService.getAllTasks()).thenReturn(Arrays.asList(taskDto1, taskDto2));
+        List<TaskDto> tasks = taskController.getAllTasks();
         assertEquals(2, tasks.size());
         verify(taskService).getAllTasks();
     }

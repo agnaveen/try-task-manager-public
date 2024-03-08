@@ -5,6 +5,7 @@ package com.techriseyou.taskmanager.service;
  * Author: Naveen
  */
 
+import com.techriseyou.taskmanager.dto.TaskDto;
 import com.techriseyou.taskmanager.entity.Task;
 import com.techriseyou.taskmanager.repository.TaskRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -49,7 +50,7 @@ public class TaskServiceTest {
     @Test
     void getAllTasks() {
         when(taskRepository.findAll()).thenReturn(Arrays.asList(task1, task2));
-        List<Task> tasks = taskService.getAllTasks();
+        List<TaskDto> tasks = taskService.getAllTasks();
         assertNotNull(tasks);
         assertEquals(2, tasks.size());
         verify(taskRepository, times(1)).findAll();
@@ -67,7 +68,7 @@ public class TaskServiceTest {
     @Test
     void createTask() {
         when(taskRepository.save(any(Task.class))).thenReturn(task1);
-        Task savedTask = taskService.createTask(task1);
+        TaskDto savedTask = taskService.createTask(task1);
         assertNotNull(savedTask);
         assertEquals(task1.getTitle(), savedTask.getTitle());
         verify(taskRepository, times(1)).save(task1);
